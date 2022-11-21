@@ -1,0 +1,44 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "description": "Web Development Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonovanTT/webdev.git"
+  },
+  "keywords": [
+    "web",
+    "website",
+    "dev",
+    "development",
+    "site",
+    "code",
+    "coding",
+    "program",
+    "programming",
+    "software",
+    "tutorial",
+    "lesson",
+    "learn",
+    "course",
+    "repo",
+    "repository",
+    "node",
+    "npm",
+    "js",
+    "javascript",
+    "html",
+    "css",
+    "github"
+  ],
+  "author": "Donovan Thacker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DonovanTT/webdev/issues"
+  },
+  "homepage": "https://github.com/DonovanTT/webdev#readme"
+}
