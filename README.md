@@ -29,4 +29,132 @@ You can choose public or private, and you can choose a license or not. No licens
 Now that you have created a new GitHub repository, you want to find its HTTPS connection string. At time of writing, this can be done by clicking the green "Code" button. A small window will pop up - make sure you're on the HTTPS tab, and the string in the box will be your connection string.
 
 In your IDE, open a new terminal. Make sure you are navigated to the directory where you want your new project files to be created and run the following command:
-git clone {your connection string}
+
+    git clone {your connection string}
+
+# Initialize a Node Project
+
+In the terminal, navigate into your new project folder with the following command:
+
+    cd {your new project folder name}
+
+Then enter the following command in the terminal:
+
+    npm init
+
+Enter a package name (press Enter to accept the default project name provided by the folder name).
+Enter a version (again, press Enter to accept the default).
+Enter a description (the default is blank).
+Enter an entry point (I recommend the default).
+Enter a test command ("Test?" Or "Debug?").
+The git repository should correctly point to your GitHub repo.
+Enter any keywords you like. These might be good for SEO, I don't know. I'll have to look into that. I entered a bunch.
+Enter an author, or your name.
+Enter your license. I chose MIT.
+Finally, press Enter one last time to confirm your changes to the new package.json file.
+
+# A Few Notes On Version Control Before We Continue
+
+# How to Save Your Work on GitHub:
+
+    Save all of your files locally.
+    Run the following command to check the status of your local repository:
+
+        git status
+
+    This will tell you if you have any modified or untracked files. If you do, enter the following command to stage all of them for saving:
+
+        git add .
+
+    Now that you have added all of your modifications to the staged commit, you can commit them to your local repository with the following command (Note that you need to add a message with the -m option. Just give of a brief description of any changes you have made since your last commit.):
+
+        git commit -m "{Your message here.}"
+
+    This will create a commit on your local repository. Think of it like creating a new save file. Now we want to push this new save file up to the GitHub repository so other people can access it and/or so it is backed up in the cloud. We can do this with the following command:
+
+        git push
+
+# How Someone Else can Clone Your Repo And Start Working On It:
+
+    I'm just going to address this third theoretical someone.
+    Get the connection string from your friend's GitHub repository and enter the following command:
+
+        git clone {your friend's connection string}
+
+    This will pull down all of the existing code in the repository.
+
+    Now, for the reason I included this section: if your friend has included any node packages - which they likely will have if they have progressed at all in this tutorial - you will need to install them in order for the code to run properly on your machine. You can do this will the following command:
+
+        npm install
+
+# Install Express
+
+    The first node package you'll need to install with npm is Express. Install it with the following command:
+
+        npm i express
+
+# Create the HTML File (Client)
+
+    Create a file called index.html in your project folder. For a basic "Hello World" page, enter the following content:
+
+        <!DOCTYPE html>
+
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <title>Hello World!</title>
+            </head>
+            <body>
+                <div>Hello World!</div>
+            </body>
+        </html>
+
+    The <title> tag sets the title that will appear in the tab at the top of your browser.
+    Everything inside the <body> tag is the content that will appear on the user's screen.
+
+# Create the JS File (Server)
+
+    We need to set up an express server.
+
+    First, require the express library that we downloaded at the top of the file:
+
+        const express = require('express');
+
+    Then create an instance of express called "app":
+
+        const app = express();
+
+    Now, set a port. This is the port that the client will connect to. Select a number between 3000 and 8000.
+
+        const port = 3000;
+
+    Next, enter the following:
+
+        app.get('/', function (req, res) {
+            res.sendFile('index.html', {root: __dirname});
+        })
+
+    This is an example of an express route. This get route takes two parameters: the path ("/", in this case) and a callback function. This callback function is called middleware, because it runs in the middle of the route's path to the server and back. The content of the function here will send the index.html file to the client.
+
+    Finally, the app needs to listen on the route:
+
+        app.listen(port, () => {
+            console.log(`Now listening on port ${port}`);
+        });
+
+# Run The Server
+
+Finally, run your server with the following command in the terminal:
+
+    node index.js
+
+Now you can open your app at the following URL:
+
+    http://localhost:{Your port}}/
+
+# References
+
+    Set Up and Run a Simple Node Server Project:
+    https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09

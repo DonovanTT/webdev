@@ -40,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/DonovanTT/webdev/issues"
   },
-  "homepage": "https://github.com/DonovanTT/webdev#readme"
+  "homepage": "https://github.com/DonovanTT/webdev#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
