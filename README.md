@@ -55,94 +55,94 @@ Finally, press Enter one last time to confirm your changes to the new package.js
 
 # A Few Notes On Version Control Before We Continue
 
-# How to Save Your Work on GitHub:
+## How to Save Your Work on GitHub:
 
-    Save all of your files locally.
-    Run the following command to check the status of your local repository:
+Save all of your files locally.
+Run the following command to check the status of your local repository:
 
-        git status
+    git status
 
-    This will tell you if you have any modified or untracked files. If you do, enter the following command to stage all of them for saving:
+This will tell you if you have any modified or untracked files. If you do, enter the following command to stage all of them for saving:
 
-        git add .
+    git add .
 
-    Now that you have added all of your modifications to the staged commit, you can commit them to your local repository with the following command (Note that you need to add a message with the -m option. Just give of a brief description of any changes you have made since your last commit.):
+Now that you have added all of your modifications to the staged commit, you can commit them to your local repository with the following command (Note that you need to add a message with the -m option. Just give of a brief description of any changes you have made since your last commit.):
 
-        git commit -m "{Your message here.}"
+    git commit -m "{Your message here.}"
 
-    This will create a commit on your local repository. Think of it like creating a new save file. Now we want to push this new save file up to the GitHub repository so other people can access it and/or so it is backed up in the cloud. We can do this with the following command:
+This will create a commit on your local repository. Think of it like creating a new save file. Now we want to push this new save file up to the GitHub repository so other people can access it and/or so it is backed up in the cloud. We can do this with the following command:
 
-        git push
+    git push
 
-# How Someone Else can Clone Your Repo And Start Working On It:
+## How Someone Else can Clone Your Repo And Start Working On It:
 
-    I'm just going to address this third theoretical someone.
-    Get the connection string from your friend's GitHub repository and enter the following command:
+I'm just going to address this third theoretical someone.
+Get the connection string from your friend's GitHub repository and enter the following command:
 
-        git clone {your friend's connection string}
+    git clone {your friend's connection string}
 
-    This will pull down all of the existing code in the repository.
+This will pull down all of the existing code in the repository.
 
-    Now, for the reason I included this section: if your friend has included any node packages - which they likely will have if they have progressed at all in this tutorial - you will need to install them in order for the code to run properly on your machine. You can do this will the following command:
+Now, for the reason I included this section: if your friend has included any node packages - which they likely will have if they have progressed at all in this tutorial - you will need to install them in order for the code to run properly on your machine. You can do this will the following command:
 
-        npm install
+    npm install
 
 # Install Express
 
-    The first node package you'll need to install with npm is Express. Install it with the following command:
+The first node package you'll need to install with npm is Express. Install it with the following command:
 
-        npm i express
+    npm i express
 
 # Create the HTML File (Client)
 
-    Create a file called index.html in your project folder. For a basic "Hello World" page, enter the following content:
+Create a file called index.html in your project folder. For a basic "Hello World" page, enter the following content:
 
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-                <title>Hello World!</title>
-            </head>
-            <body>
-                <div>Hello World!</div>
-            </body>
-        </html>
+            <title>Hello World!</title>
+        </head>
+        <body>
+            <div>Hello World!</div>
+        </body>
+    </html>
 
-    The <title> tag sets the title that will appear in the tab at the top of your browser.
-    Everything inside the <body> tag is the content that will appear on the user's screen.
+The <title> tag sets the title that will appear in the tab at the top of your browser.
+Everything inside the <body> tag is the content that will appear on the user's screen.
 
 # Create the JS File (Server)
 
-    We need to set up an express server.
+We need to set up an express server.
 
-    First, require the express library that we downloaded at the top of the file:
+First, require the express library that we downloaded at the top of the file:
 
-        const express = require('express');
+    const express = require('express');
 
-    Then create an instance of express called "app":
+Then create an instance of express called "app":
 
-        const app = express();
+    const app = express();
 
-    Now, set a port. This is the port that the client will connect to. Select a number between 3000 and 8000.
+Now, set a port. This is the port that the client will connect to. Select a number between 3000 and 8000.
 
-        const port = 3000;
+    const port = 3000;
 
-    Next, enter the following:
+Next, enter the following:
 
-        app.get('/', function (req, res) {
-            res.sendFile('index.html', {root: __dirname});
-        })
+    app.get('/', function (req, res) {
+        res.sendFile('index.html', {root: __dirname});
+    })
 
-    This is an example of an express route. This get route takes two parameters: the path ("/", in this case) and a callback function. This callback function is called middleware, because it runs in the middle of the route's path to the server and back. The content of the function here will send the index.html file to the client.
+This is an example of an express route. This get route takes two parameters: the path ("/", in this case) and a callback function. This callback function is called middleware, because it runs in the middle of the route's path to the server and back. The content of the function here will send the index.html file to the client.
 
-    Finally, the app needs to listen on the route:
+Finally, the app needs to listen on the route:
 
-        app.listen(port, () => {
-            console.log(`Now listening on port ${port}`);
-        });
+    app.listen(port, () => {
+        console.log(`Now listening on port ${port}`);
+    });
 
 # Run The Server
 
@@ -156,5 +156,5 @@ Now you can open your app at the following URL:
 
 # References
 
-    Set Up and Run a Simple Node Server Project:
-    https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
+Set Up and Run a Simple Node Server Project:
+https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
