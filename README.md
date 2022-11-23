@@ -211,6 +211,13 @@ I'll try adding a start script to the project's package.json file.
 
     "start": "index.js"
 
+Now I added a Procfile:
+
+    web: node ./index.html
+    api: node ./index.js
+
+I might still need to install concurrently to run the two together.
+
 # References
 
 GitHub Integration (Heroku GitHub Deploys)
