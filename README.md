@@ -217,6 +217,7 @@ Now I added a Procfile:
     api: node ./index.js
 
 I might still need to install concurrently to run the two together.
+Yep, still getting an error. I'll install concurrently and create a start file to run both.
 
 # References
 

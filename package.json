@@ -4,9 +4,8 @@
   "description": "Web Development Tutorial",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js",
-    "client": "node index.html",
-    "start": "concurrently \"server\" \"client\"",
+    "start": "node index.js",
+    "my-custom-start": "PROD=true node index.js",
     "test": "test"
   },
   "repository": {
