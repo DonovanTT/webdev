@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "my-custom-start": "PROD=true node index.js",
     "test": "test"
   },
   "repository": {
