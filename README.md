@@ -128,7 +128,7 @@ Then create an instance of express called "app":
 
 Now, set a port. This is the port that the client will connect to. Select a number between 3000 and 8000.
 
-    const port = 3000;
+    const port = process.env.PORT || 3000;
 
 Next, enter the following:
 
@@ -209,12 +209,11 @@ My build is failing. Pretty sure it's because I don't have a start script. Let's
 
 I'll try adding a start script to the project's package.json file.
 
-    "start": "index.js"
+    "start": "node index.js",
 
 Now I added a Procfile:
 
-    web: node ./index.html
-    api: node ./index.js
+    web: npm run start
 
 I might still need to install concurrently to run the two together.
 Yep, still getting an error. I'll install concurrently and create a start file to run both.
