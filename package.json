@@ -4,7 +4,8 @@
   "description": "Web Development Tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "index.js"
   },
   "repository": {
     "type": "git",

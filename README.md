@@ -154,7 +154,70 @@ Now you can open your app at the following URL:
 
     http://localhost:{Your port}}/
 
+# Next Steps
+
+Now that you've gotten started, you should create a Trello account if you haven't already got one. It's an excellent tool for keeping track of progress.
+
+Moving forward, we want to:
+
+Deploy the website. Getting the website deployed early means that we know each subsequent step works on Heroku. I should look into other services, too. Better to be diverse.
+
+We need a Navbar, and multiple pages.
+
+Figure out what kind of database we want to use and figure out how to connect to it. I'm going to be using SQL because I like SSMS.
+
+Set up authorization. It needs to save tokens or something to remember if the user is logged in. Different users should be able to see their own data.
+
+Email newsletter sign up and means for the admin to send emails. Latter does not need to be built in.
+
+Payment processing and a store page.
+
+Google Ads. Maybe look into other services, as well.
+
+Search Engine Optimization (SEO)
+
+User Content - Allow certain user roles to create articles, which create pages and are navigable to.
+
+Search functionality - allow users to search site's articles. Articles should be filterable by title, tags, content, date, and author. "Relevance" is the number of times a keyphrase and/or keyword appears in any/all of these.
+
+Admin Studio: Where admins can see and edit users, send email, and see orders.
+
+User Roles:
+
+- Administrator: Can see and edit any/all user roles/permissions.
+- Operator: Can see and edit user roles/permissions, except changing users to/from Operators or Administrators.
+- Author: Can add/edit/delete articles.
+- Manager: Can add/edit/delete store posts.
+- Email: Can read and send email.
+
 # References
 
 Set Up and Run a Simple Node Server Project:
 https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
+
+# Deploying to Heroku
+
+On Heroku.com, create a new app.
+
+Select GitHub as the deployment method.
+
+Selecct your GitHub repository to connect to.
+
+Enable automatic deploys.
+
+My build is failing. Pretty sure it's because I don't have a start script. Let's find out.
+
+I'll try adding a start script to the project's package.json file.
+
+    "start": "index.js"
+
+# References
+
+GitHub Integration (Heroku GitHub Deploys)
+https://devcenter.heroku.com/articles/github-integration
+
+Getting Started on Heroku with Node.js
+https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true
+
+Best Practices for Node.js Development
+https://devcenter.heroku.com/articles/node-best-practices
