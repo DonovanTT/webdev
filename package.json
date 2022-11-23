@@ -4,7 +4,9 @@
   "description": "Web Development Tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "index.js",
+    "server": "node index.js",
+    "client": "node index.html",
+    "start": "concurrently \"server\" \"client\"",
     "test": "test"
   },
   "repository": {
