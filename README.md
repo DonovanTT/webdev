@@ -148,19 +148,35 @@ Finally, the app needs to listen on the route:
 
 Finally, run your server with the following command in the terminal:
 
-    node index.js
+    node server.js
 
 Now you can open your app at the following URL:
 
     http://localhost:{Your port}}/
+
+# Deploying to Heroku
+
+On Heroku.com, create a new app.
+
+Select GitHub as the deployment method.
+
+Select your GitHub repository to connect to.
+
+Enable automatic deploys.
+
+Add a start script to the project's package.json file.
+
+    "start": "node server.js",
+
+Now add a Procfile:
+
+    web: npm run start
 
 # Next Steps
 
 Now that you've gotten started, you should create a Trello account if you haven't already got one. It's an excellent tool for keeping track of progress.
 
 Moving forward, we want to:
-
-Deploy the website. Getting the website deployed early means that we know each subsequent step works on Heroku. I should look into other services, too. Better to be diverse.
 
 We need a Navbar, and multiple pages.
 
@@ -194,29 +210,6 @@ User Roles:
 
 Set Up and Run a Simple Node Server Project:
 https://levelup.gitconnected.com/set-up-and-run-a-simple-node-server-project-38b403a3dc09
-
-# Deploying to Heroku
-
-On Heroku.com, create a new app.
-
-Select GitHub as the deployment method.
-
-Selecct your GitHub repository to connect to.
-
-Enable automatic deploys.
-
-My build is failing. Pretty sure it's because I don't have a start script. Let's find out.
-
-I'll try adding a start script to the project's package.json file.
-
-    "start": "node index.js",
-
-Now I added a Procfile:
-
-    web: npm run start
-
-I might still need to install concurrently to run the two together.
-Yep, still getting an error. I'll install concurrently and create a start file to run both.
 
 # References
 

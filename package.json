@@ -2,9 +2,9 @@
   "name": "webdev",
   "version": "1.0.0",
   "description": "Web Development Tutorial",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "test"
   },
   "repository": {

@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
 
 app.get('/about', function (req, res) { 
     res.sendFile('about.html', {root: __dirname}) ;
-  }) 
+}) 
 
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);
-}); 
+});
